@@ -21,3 +21,40 @@ for sheet in wb:
     print(sheet.titlt)
 
 ```
+#### 函数
+- 1、获取as和cp值 `get_as_cp`
+```
+"""大神算法，两个参数在js文件：home_4abea46.js
+! function(t){
+    var e = {};
+    e.getoney = function(){
+        var t = Math.floor((new Date).getTime()/1e3)
+            ,e = t.toString(16).toUpperCase()
+            ,i = md5(t).toString().toUpperCase();
+        if (8!=e.length)
+            return{
+                as:"",
+                cp:""
+             };
+        for (var n = i.slice(0,5),a = i.slice(-5),s = "",o = 0;5 > o;
+            s += n[o]+e[o];
+        for (var r = "",c = 0;5>c;c++)
+            r += e[c+3] + a[c];
+        return {
+            as:"",
+            cp:""
+        }
+    }
+    ,
+    t.ascp = e
+}(window,documnent),
+
+"""python 获取cp和as值"""
+def get_as_cp():
+    zz = {}
+    now = round(time.time())
+    print(now)
+    e = hex(int(now).upper()[2:]   
+    print('e':e)
+    
+```
