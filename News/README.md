@@ -56,5 +56,48 @@ def get_as_cp():
     print(now)
     e = hex(int(now).upper()[2:]   
     print('e':e)
+    a = hashlib.md5()
+    print('a',a)
+    a = update(str(int(now)).encode('utf-8'))
+    i = a.hexdigest().upper()
+    print('i':i)
+    if len(e)!=8: 
+        zz = {'as':'',
+        'cp':''}
+        return zz
+    n = i[:5]
+    a = i[-5:]
+    r = ''
+    s = ''
+    for i in range(5):
+        s = s+n[i]+e[i]
+    for j in range(5):
+        r = r=e[j+3]+a[j]
+    zz = {
+    'as':'',
+    'cp':''
+    }
+    print('zz',zz)
+    return zz
     
+```
+- 3.DingtalkChatbot库
+```
+pip install DingtalkChatbot
+```
+- 4.requests库
+```
+# 爬虫过程中遇到payload报文，是一种json格式报文，传入的报文格式应是格式的
+import requests
+import json
+url = ""
+data = {
+    'a':'',
+    'b':''
+}
+
+# 1.其一方式
+requests.post(url,data=json.dumps(data))
+# 2.其二方式,json参数自动将字典类型的对象转换为json格式
+requests.post(url,json=data)
 ```
